@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AREZ Official Store</title>
+  <meta name="description" content="Minimal clothing store. Simple, clean, fast." />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div class="topbar container">
+      <div class="brand" aria-label="AREZ Brand">
+        <div>
+          <img id="logo" src="assets/Image/logo.png" alt="AREZ Official Logo"
+            style="width:100%;border-radius:24px;max-height:140px;object-fit:cover;">
+        </div>
+        <span>AREZ OFFICIAL</span>
+      </div>
+      <div class="search" role="search">
+        <input id="q" placeholder="Search..." />
+        <button class="iconbtn" id="clearSearch" title="Clear" style="display:none;">
+          Clear
+        </button>
+      </div>
+      <div>
+        <button class="iconbtn" id="openCart" title="Cart" aria-label="Cart">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="vertical-align:middle">
+            <path
+              d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM3 6h2l3.6 7.59a2 2 0 0 0 1.7 1.16h7.72a2 2 0 0 0 1.98-1.7l1.38-7.45A1 1 0 0 0 20 5H6"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" aria-label="โปรโมชั่น">
+      <div class="slideshow">
+        <img id="slideImg" src="assets/Image/Slideshow/1.jpg"
+          style="width:100%;border-radius:24px;max-height:340px;object-fit:cover;">
+        <div style="text-align:center;margin-top:10px;">
+          <button class="btn" onclick="prevSlide()">‹</button>
+          <button class="btn" onclick="nextSlide()">›</button>
+        </div>
+      </div>
+    </section>
+
+    <section aria-label="ProductList">
+      <h2>Compression Shirt</h2>
+      <div class="grid" id="compression-grid"></div>
+    </section>
+    <section>
+      <h2>Woman</h2>
+      <div class="grid" id="woman-grid"></div>
+    </section>
+    <section>
+      <h2>Oversized</h2>
+      <div class="grid" id="oversized-grid"></div>
+    </section>
+    
+  </main>
+
+  <!-- Floating cart button -->
+  <button class="iconbtn cart-toggle" id="fab">
+    Cart
+    <span class="cart-count" id="cartCount" aria-live="polite">0</span>
+  </button>
+
+  <!-- Drawer cart -->
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="scrim" id="closeDrawer" aria-label="CloseCart"></div>
+    <div class="panel" role="dialog" aria-label="Cart">
+      <header>
+        <h3>Cart</h3>
+        <button class="iconbtn" id="x">Close</button>
+      </header>
+      <div class="items" id="items"></div>
+      <div class="totals">
+        <div class="row"><span>Subtotal</span><strong id="subtotal">฿0</strong></div>
+        <div class="row"><span>Shipping</span><span id="shipping">฿60</span></div>
+        <div class="row"><span>Total</span><strong id="grand">฿0</strong></div>
+      </div>
+      <div class="checkout">
+        <button class="btn full" id="checkoutBtn">Checkout</button>
+      </div>
+    </div>
+  </aside>
+
+  <footer>
+    <div class="container">
+      <div>© <span id="yr"></span> AREZ</div>
+    </div>
+  </footer>
+
+  <template id="cardTpl">
+    <article class="card">
+      <div class="thumb">
+        <span class="badge" style="background:#dddd;color:black;">New</span>
+      </div>
+      <div class="content">
+        <div class="title"></div>
+        <div class="muted"></div>
+        <div class="price-row">
+          <strong class="price"></strong>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
