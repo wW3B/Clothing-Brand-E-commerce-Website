@@ -69,10 +69,6 @@ If hosted online, provide link here, for example:
 
 https://ww3b.github.io/Clothing-Brand-E-commerce-Website
 
-## 📸 Screenshots
-![Home](./images/home.png)
-![Product](./images/product.png)
-
 ## 🎯 Learning Outcomes
 
 Built responsive UI with HTML, CSS, and JavaScript
